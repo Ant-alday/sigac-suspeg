@@ -1,35 +1,25 @@
-SIGAC-SUSPEG
+# SIGAC-SUSPEG
 
-Sistema Integral de Gestión Administrativa y Control para el Sindicato Único de Servidores Públicos del Estado de Guerrero (SUSPEG), Sección 75.
+Sistema Integral de Gestión Administrativa y Control para el **Sindicato Único de Servidores Públicos del Estado de Guerrero (SUSPEG), Sección 75**.
 
-Módulos
-🗂️ Organización — padrón de agremiados, afiliación, credenciales SUSPEG.
-💰 Finanzas — ingresos y egresos por partida, informes mensuales/anuales.
-🏠 Fomento Habitacional — insumos subsidiados y convenios de descuento.
-⚖️ Trabajos y Conflictos — casos laborales, permisos y plazas vacantes.
-Stack técnico
 
-Laravel 12 · React 18 + Inertia.js · Tailwind CSS v4 · MySQL
+## ¿Qué es SIGAC-SUSPEG?
 
-Instalación local
-bash
-git clone https://github.com/Ant-alday/sigac-suspeg.git
-cd sigac-suspeg
+Hoy, cada secretaría de la Sección 75 lleva su información por su cuenta: padrones en Excel, expedientes en papel, comprobantes sueltos, sin ninguna conexión entre ellas. SIGAC-SUSPEG junta esa operación en un solo sistema web, respetando cómo trabaja realmente cada secretaría, y conectando la información donde tiene sentido (por ejemplo, un mismo agremiado puede aparecer en Organización, pedir un beneficio en Fomento Habitacional, o tener un caso abierto en Trabajos y Conflictos, sin volver a capturar sus datos cada vez).
 
-composer install
-npm install
+## Módulos
 
-copy .env.example .env
-php artisan key:generate
+### 🗂️ Secretaría de Organización
+Padrón completo de agremiados (afiliación, expedientes, documentos), gestión de estatus, credenciales SUSPEG, y el catálogo de secretarías/dependencias del gobierno del estado.
 
-# Configura DB_DATABASE, DB_USERNAME y DB_PASSWORD en .env
+### 💰 Secretaría de Finanzas
+Registro de ingresos y egresos por partida presupuestal, verificación de la cuota mensual reportada contra la nómina real de agremiados activos, inventario de bienes muebles, e informes financieros mensuales/anuales.
 
-php artisan migrate
-php artisan db:seed --class=PartidasPresupuestalesSeeder
-php artisan db:seed --class=InsumosSeeder
-php artisan storage:link
+### 🏠 Secretaría de Fomento Habitacional
+Programa de insumos subsidiados (calentadores solares, tinacos, cisternas, leche) en colaboración con la Congregación Mariana Trinitaria A.C., catálogo de categorías dinámico, convenios de descuento con instituciones externas (ej. CIEX), y reportes de beneficiarios por insumo.
 
-npm run dev
-php artisan serve
+### ⚖️ Secretaría de Trabajos y Conflictos
+Seguimiento de casos laborales (despidos injustificados, conflictos individuales/colectivos, demandas) con coordinación hacia Asuntos Jurídicos, solicitudes de permiso (días económicos y licencias sin goce de sueldo), y administración de plazas vacantes por jubilación mediante escalafón.
 
-Abre http://localhost:8000.
+### 🔔 Notificaciones
+Sistema de notificaciones interno (sin ninguna API externa) que conecta eventos entre secretarías: un beneficio solicitado, un caso turnado a Jurídico, una plaza vacante sin asignar, o un remanente mensual en números rojos.
