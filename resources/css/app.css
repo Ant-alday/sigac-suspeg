@@ -1,0 +1,13 @@
+/* Tailwind v4 se activa con un solo @import (ya no son 3 líneas @tailwind). */
+@import "tailwindcss";
+
+/* Aquí registramos los colores oficiales del sistema (teal y dorado).
+   En Tailwind v4 esto ya no va en un archivo tailwind.config.js aparte:
+   se define directamente aquí, dentro de un bloque @theme. Así, en el
+   código podemos escribir "bg-suspeg-teal" en vez de repetir el código
+   hexadecimal en cada archivo. */
+@theme {
+  --color-suspeg-teal: #0F4C5C;
+  --color-suspeg-teal-oscuro: #0A3540;
+  --color-suspeg-dorado: #D4A017;
+}
